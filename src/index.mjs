@@ -5,6 +5,7 @@ import morgan from "morgan";
 import mongoose from "mongoose";
 import path from "path";
 import { fileURLToPath } from "url";
+import cors from "cors";
 
 dotenv.config();
 
@@ -17,6 +18,7 @@ mongoose.connect(process.env.MONGO_URL, {
 	useNewUrlParser: true
 });
 
+server.use(cors());
 server.use(express.json());
 server.use(express.urlencoded({ extended: true }));
 server.use(morgan("dev"));

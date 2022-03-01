@@ -14,6 +14,7 @@ route.get("/posts", async (req, res) => {
 });
 
 route.post("/posts", multer(multerConfig).single("file") , async(req, res) => {
+	console.log(req.file);
 	const { originalname: name, size, key, location: url = "" } = req.file;
 
 	const post = await Post.create({

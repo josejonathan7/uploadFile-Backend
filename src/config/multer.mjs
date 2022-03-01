@@ -4,6 +4,9 @@ import multerS3 from "multer-s3";
 import aws from "aws-sdk";
 import crypto from "crypto";
 import { fileURLToPath } from "url";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
